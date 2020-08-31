@@ -1,4 +1,4 @@
-The purpose of the screen is to load interesting segments from a company's balance sheet, income statement and cash flow statement. 
+The purpose of the page is to load interesting segments from a company's balance sheet, income statement and cash flow statement. 
 The items were selected by the author.
 
 Technologies Used:
