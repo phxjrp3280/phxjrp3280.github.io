@@ -2,21 +2,25 @@ $(()=>{
 
 
 //////////////////////// modal setup
-  const $openBtn = $('#openModal');  //jquery address to the #openModal in the html
-  const $modal = $('#modal');       // jqury address to the #modal in the html
-  const $closeBtn = $('#close');    // jquery address to the close button
+  const $open = $('#openM');  //jquery address to the #openModal in the html
+  const $mod = $('#mod');       // jqury address to the #modal in the html
+  const $close = $('#cls');    // jquery address to the close button
 
-  const openModal = () => {
-  $modal.css('display', 'block');
+  const closeM = () => {
+    console.log('in closeM')
+  $mod.css('display', 'none');
 }
 
-  const closeModal = () => {
-  $modal.css('display', 'none');
+  const openM = () => {
+    console.log('in openM')
+  $mod.css('display', 'block');
 }
 
-$openBtn.on('click', openModal);
 
-$closeBtn.on('click', closeModal);
+
+$open.on('click', openM);
+
+$close.on('click', closeM);
 //////////////////////// modal setup
 class ApiData{
     constructor(){
