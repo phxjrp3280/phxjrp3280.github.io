@@ -2,17 +2,15 @@ $(()=>{
 
 
 //////////////////////// modal setup
-  const $open = $('#openM');  //jquery address to the #openModal in the html
-  const $mod = $('#mod');       // jqury address to the #modal in the html
-  const $close = $('#cls');    // jquery address to the close button
+  const $open = $('#openM');  //jquery address to the #openM in the html
+  const $mod = $('#mod');       // jqury address to the #mod in the html
+  const $close = $('#cls');    // jquery address to the #cls button
 
   const closeM = () => {
-    console.log('in closeM')
   $mod.css('display', 'none');
 }
 
   const openM = () => {
-    console.log('in openM')
   $mod.css('display', 'block');
 }
 
