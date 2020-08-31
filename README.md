@@ -23,3 +23,4 @@ Technologies Used:
     
   2.  Additionally, I plan on adding links to financial articles on the site as well.  Off to the side at first and then resizing to beneath the financial data
     if the screen size gets small enough.
+
