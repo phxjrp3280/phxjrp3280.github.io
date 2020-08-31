@@ -1,0 +1,190 @@
+.fincont {
+  margin-left: 2em;
+  background-color:gray;
+  border-radius: 11px;
+  width: 550px;
+}
+
+
+h2 {
+  font-size: 20px;
+  width:  90%;
+
+}
+
+h3 {
+  font-size: 15px;
+  width: 45%;
+}
+
+#holder, #holdera, #dwa, #dwb, #dwse {
+  display:flex;
+  justify-content: space-between;
+  margin: 5px;
+  width: 100%;
+}
+
+#ca, #ta, #cl, #tl, #se{
+  margin: 5px 10px 5px 5px;
+}
+
+#can {
+  text-align: right;
+  margin: 5px;
+}
+
+body {
+
+}
+/*
+#bgi {
+  width: 100%;
+  filter: blur(8px);
+   -webkit-filter: blur(8px);
+   height: 100%;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   z-index:-1;
+
+} */
+
+#modal {
+	background-color: rgba(0,0,50.2,0.4);
+	position: fixed;
+  margin-left: 2em;
+  margin-top: 2em;
+	top: 0;
+	left: 0;
+	height: 90%;
+	width: 90%;
+	z-index: 1;
+	/*This puts our modal in front of the body (which has a default z-index setting of `0`*/
+	overflow: auto;
+	/*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
+  display: none;
+}
+
+#modal-textbox {
+	background-color: white;
+	height: 350px;
+	width: 550px;
+	border-radius: 10px;
+  margin: 200px auto;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2)
+}
+
+#openModal {
+  margin: 2em;
+}
+
+#close {
+  margin: 10px 10px 10px 10px;
+}
+form{
+  margin: 20px 10px 10px 30px;
+}
+
+#submit {
+  margin: 10px 5px 5px 5px;
+}
+
+/**************************************** media change ********************************/
+
+@media(min-width: 600px){
+
+.fincont {
+  margin-left: 2em;
+  background-color:gray;
+  border-radius: 11px;
+  width: 900px;
+}
+
+
+h2 {
+  font-size: 40px;
+  width:  98%;
+  length: 1100px;
+  border: 2px solid lime;
+}
+
+h3 {
+  font-size: 30px;
+  width: 48%;
+  border: 2px solid cyan;
+
+
+}
+
+#holder, #holdera, #dwa, #dwb, #dwse {
+  display:flex;
+  justify-content: space-between;
+  margin: 5px;
+  width: 98%;
+}
+
+#ca, #ta, #cl, #tl, #se{
+  margin: 5px;
+}
+
+#can {
+  text-align: right;
+  margin: 5px;
+}
+
+body {
+
+}
+/*
+#bgi {
+  width: 100%;
+  filter: blur(8px);
+   -webkit-filter: blur(8px);
+   height: 100%;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   z-index:-1;
+
+}*/
+
+#modal {
+	background-color: rgba(0,0,50.2,0.4);
+	position: fixed;
+  margin-left: 2em;
+  margin-top: 2em;
+	top: 0;
+	left: 0;
+	height: 90%;
+	width: 90%;
+	z-index: 1;
+
+	overflow: auto;
+
+  display: none;
+}
+
+#modal-textbox {
+	background-color: white;
+	height: 350px;
+	width: 550px;
+	border-radius: 10px;
+  margin: 200px auto;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2)
+}
+
+#openModal {
+  margin: 2em;
+}
+
+#close {
+  margin: 10px 10px 10px 10px;
+}
+form{
+  margin: 20px 10px 10px 30px;
+}
+
+#submit {
+  margin: 10px 5px 5px 5px;
+}
+}
