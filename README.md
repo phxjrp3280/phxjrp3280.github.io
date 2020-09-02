@@ -37,10 +37,8 @@ Jvest
 https://phxjrp3280.github.io/
 A tidy web page that brings back interesting pieces of corporate financial statements
 
-For more on these wonderful badgers badges, refer to badgerbadgerbadger.
-
 The page as you first arrive is a simple input screen: 
-
+I have some really cool gif's and no idea how to import them.
 
 
 
@@ -68,8 +66,7 @@ License
 
 
 Installation
-All the code required to get started
-Images of what it should look like
+
 Clone
 Clone this repo to your local machine using phxjrp3280/phxjrp3280.github.io
 
@@ -87,7 +84,7 @@ Going into more detail on code and technologies used
   Ajax makes the call to the API.
   
 Contributing
-I borrowed heavily from classroom examples.  Authors, whose techniques I blatenly mirrored, are Brendan Quirk, Jerrica Bobadilla, Matt Huntington and Karolin Rafalski.  
+I borrowed heavily from classroom examples.  Authors, whose techniques I blatenly mirrored (in alphabetical order) are , Jerrica Bobadilla, Matt Huntington,  Karolin Rafalski and Brendan Quirk
 
 Step 1
 Option 1
