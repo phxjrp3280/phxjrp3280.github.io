@@ -19,17 +19,6 @@ $open.on('click', openM);
 $close.on('click', closeM);
 //////////////////////// modal setup  end ///////////////////
 
-////////////////Convert num to dollars///////////////////////////////////////////
-const chngToDol = (num) => {
-for(x=0,num.length-1;x++){
-  let holdnum[x] =num[x]
-}
-console.log(holdnum)
-
-
-}
-
-
 /////////////////////carousel navigation /////////////////////////////////////////
 //// it should be loaded with year zero.  I'm bring up year 4 so they'll only ////
 //// cycle through years 0 through 3                                          ////
@@ -83,15 +72,34 @@ const api = new ApiData('api')
 const getApiData = (input) =>{
   console.log(input)
   for(x=0;x<5;x++){
-  api.currAsst[x] = (input.results[x].balanceSheet.assets.commercialsCurrentAssets.currentAssets/1000000)
 
-  api.totcast[x] =  (input.results[x].balanceSheet.assets.totalAssets/1000000)
+//         this code takes the numbers from the financial statements and divides by 1 million.
+//         most people consider all the extra zeros tough to wade through.
+//         the Intl.NumberFormat takes the number and puts $ signs and commas where they should
+//         go because output masking is not native to javascript.
 
-  api.curliab[x] = (input.results[x].balanceSheet.liabAndStockEquity.liabilities.currentLiabilities.currentLiabilities/1000000)
+  api.currAsst[x] = new Intl.NumberFormat('en-US' ,{ style: 'currency', currency: 'USD',  maximumSignificantDigits: 5 }).format((input.results[x].balanceSheet.assets.commercialsCurrentAssets.currentAssets/1000000))
 
-  api.totliab[x] = (input.results[x].balanceSheet.liabAndStockEquity.liabilities.totalLiabilities/1000000)
+  api.totcast[x] = new Intl.NumberFormat('en-US' ,{ style: 'currency', currency: 'USD',  maximumSignificantDigits: 5 }).format((input.results[x].balanceSheet.assets.totalAssets/1000000))
 
-  api.se[x] = (input.results[x].balanceSheet.liabAndStockEquity.stockholdersEquity.totalStockholdersEquity/1000000)
+
+  //api.totcast[x] =  (input.results[x].balanceSheet.assets.totalAssets/1000000)
+
+
+  api.curliab[x] = new Intl.NumberFormat('en-US' ,{ style: 'currency', currency: 'USD',  maximumSignificantDigits: 5 }).format((input.results[x].balanceSheet.liabAndStockEquity.liabilities.currentLiabilities.currentLiabilities/1000000))
+
+
+  //api.curliab[x] = (input.results[x].balanceSheet.liabAndStockEquity.liabilities.currentLiabilities.currentLiabilities/1000000)
+
+  api.totliab[x] = new Intl.NumberFormat('en-US' ,{ style: 'currency', currency: 'USD',  maximumSignificantDigits: 5 }).format((input.results[x].balanceSheet.liabAndStockEquity.liabilities.totalLiabilities/1000000))
+
+
+  //api.totliab[x] = (input.results[x].balanceSheet.liabAndStockEquity.liabilities.totalLiabilities/1000000)
+
+  api.se[x] = new Intl.NumberFormat('en-US' ,{ style: 'currency', currency: 'USD',  maximumSignificantDigits: 5 }).format((input.results[x].balanceSheet.liabAndStockEquity.stockholdersEquity.totalStockholdersEquity/1000000))
+
+
+  //api.se[x] = (input.results[x].balanceSheet.liabAndStockEquity.stockholdersEquity.totalStockholdersEquity/1000000)
 
   api.year[x] = input.results[x].endDate
   console.log(input.results[x].endDate)
@@ -198,6 +206,8 @@ const buildHtml = () =>{
       $('.tlval').text(api.totliab[0])
       $('.seval').text(api.se[0])
 
+      $('.fincont').css('display','block');
+      $('#cwrap').css('display','flex');
 
 // // Income Statement highlights
 //       sales = (finArray.results[4].incomeStatement.revenue/1000000)

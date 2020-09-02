@@ -4,6 +4,7 @@
   border: 2px solid navy;
   border-radius: 11px;
   width: 550px;
+  display: none;
 }
 
 
@@ -102,7 +103,7 @@ align-items: center;}
 
 #cwrap {
   justify-content: center;
-  display:flex;
+  display:none;
   width: 550px;
   align-items: center;
   margin: auto;
@@ -204,7 +205,6 @@ background-color: aliceblue;
   }
   #cwrap {
     justify-content: center;
-    display:flex;
     width: 620px;
     align-items: center;
     margin: auto;
@@ -318,7 +318,6 @@ background-color: aliceblue;
 }
 #cwrap {
   justify-content: center;
-  display:flex;
   width: 1000px;
   align-items: center;
   margin: auto;
