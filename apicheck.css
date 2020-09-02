@@ -26,7 +26,9 @@ h3 {
   justify-content: space-between;
   margin: 5px;
   width: 100%;
-
+}
+#cls {
+  padding: 10px;
 }
 
 #ca, #ta, #cl, #tl, #se {
