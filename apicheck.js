@@ -14,14 +14,63 @@ $(()=>{
   $mod.css('display', 'block');
 }
 
-
-
 $open.on('click', openM);
 
 $close.on('click', closeM);
-//////////////////////// modal setup
+//////////////////////// modal setup  end ///////////////////
+
+////////////////Convert num to dollars///////////////////////////////////////////
+const chngToDol = (num) => {
+for(x=0,num.length-1;x++){
+  let holdnum[x] =num[x]
+}
+console.log(holdnum)
+
+
+}
+
+
+/////////////////////carousel navigation /////////////////////////////////////////
+//// it should be loaded with year zero.  I'm bring up year 4 so they'll only ////
+//// cycle through years 0 through 3                                          ////
+/////////////////////////////////////////////////////////////////////////////////
+let cntr = 0
+$('#backBtn').on('click',() =>{
+  console.log(cntr + '  in backbtn before decrement')
+  cntr = cntr -1
+  console.log(cntr)
+  if(cntr<0){
+    cntr = 3
+  }
+  $('#fildate').text(api.year[cntr])
+  $('.caval').text(api.currAsst[cntr])
+  $('.taval').text(api.totcast[cntr])
+  $('.clval').text(api.curliab[cntr])
+  $('.tlval').text(api.totliab[cntr])
+  $('.seval').text(api.se[cntr])
+})
+
+  $('#nextBtn').on('click',() =>{
+  console.log('next click ' )
+  console.log(cntr + '  in nextbtn before increment')
+  cntr = cntr + 1
+  console.log(cntr)
+  if(cntr>3){
+    cntr = 0
+  }
+  $('#fildate').text(api.year[cntr])
+  $('.caval').text(api.currAsst[cntr])
+  $('.taval').text(api.totcast[cntr])
+  $('.clval').text(api.curliab[cntr])
+  $('.tlval').text(api.totliab[cntr])
+  $('.seval').text(api.se[cntr])
+
+})
+///////////ApiData class setup////////////////////////////////////////////////
+
 class ApiData{
     constructor(){
+      this.year =[]
       this.currAsst = []
       this.totcast = []
       this.curliab = []
@@ -32,64 +81,51 @@ class ApiData{
 const api = new ApiData('api')
 
 const getApiData = (input) =>{
-  for(x=0;x<4;x++){
+  console.log(input)
+  for(x=0;x<5;x++){
   api.currAsst[x] = (input.results[x].balanceSheet.assets.commercialsCurrentAssets.currentAssets/1000000)
+
   api.totcast[x] =  (input.results[x].balanceSheet.assets.totalAssets/1000000)
-  api.curliab = (input.results[x].balanceSheet.liabAndStockEquity.liabilities.currentLiabilities.currentLiabilities/1000000)
-  api.totliab = (input.results[x].balanceSheet.liabAndStockEquity.liabilities.totalLiabilities/1000000)
-  api.se = (input.results[x].balanceSheet.liabAndStockEquity.stockholdersEquity.totalStockholdersEquity/1000000)
+
+  api.curliab[x] = (input.results[x].balanceSheet.liabAndStockEquity.liabilities.currentLiabilities.currentLiabilities/1000000)
+
+  api.totliab[x] = (input.results[x].balanceSheet.liabAndStockEquity.liabilities.totalLiabilities/1000000)
+
+  api.se[x] = (input.results[x].balanceSheet.liabAndStockEquity.stockholdersEquity.totalStockholdersEquity/1000000)
+
+  api.year[x] = input.results[x].endDate
+  console.log(input.results[x].endDate)
+
   }
-  console.log(api.currAsst[2])
+  console.log(api.currAsst[4])
+  console.log(api.year[4])
 }
 
-
-
-
-  $('form').on('submit', (event)=>{        // load the form
-      event.preventDefault()
-
-    $('.fincont').empty();
-
-      const $symbol = $('#symbol')
-      const actsym = $symbol.val()
-      const $exchange = $('#exchange')
-      const actexch = $exchange.val()
-
-    console.log(actsym + ' mid ' + actexch)
-
-/////////beginning of financial statement api ///////////////////////////////////
-
-    var settings = {
-    	"async": true,
-    	"crossDomain": true,
-    	"url": "https://morningstar1.p.rapidapi.com/convenient/fundamentals/yearly/restated?Mic=X"+actexch+"&Ticker="+actsym,
-    	"method": "GET",
-    	"headers": {
-    		"x-rapidapi-host": "morningstar1.p.rapidapi.com",
-    		"x-rapidapi-key": "a62c9da9f4msh1e92df7be31b53ep1bc3c4jsn5e703829f38c",
-    		"accept": "string"
-    	}
-    }
-
-    $.ajax(settings).done(function (response) {
-    	let finArray = (response);
-
-/////////////////////////////////////////////// end of  financial api
-      getApiData(finArray)
-
+const buildHtml = () =>{
 //Balance Sheet highlights
-      currAsst = (finArray.results[4].balanceSheet.assets.commercialsCurrentAssets.currentAssets/1000000)
-      totAsst =  (finArray.results[4].balanceSheet.assets.totalAssets/1000000)
-      currLiab = (finArray.results[4].balanceSheet.liabAndStockEquity.liabilities.currentLiabilities.currentLiabilities/1000000)
-      totLiab = (finArray.results[4].balanceSheet.liabAndStockEquity.liabilities.totalLiabilities/1000000)
-      shEqty = (finArray.results[4].balanceSheet.liabAndStockEquity.stockholdersEquity.totalStockholdersEquity/1000000)
+      currAsst = api.currAsst[4]
 
-console.log(finArray)
+      totAsst =  api.totcast[4]
+
+      currLiab =api.curliab[4]
+
+      totLiab = api.totliab[4]
+
+      shEqty =api.se[4]
+
+      filDate = api.year[4]
+
+        console.log('in build Html function')
 
       //insert Assets header
+      let $dath2 = $('<h2>')
+      $dath2.text('Statement Date:  '+filDate).attr('id','dath2')
+      $('.fincont').append($dath2)
+
       let $newh2 = $('<h2>')
       $newh2.text('Assets').attr('id','ahead')
       $('.fincont').append($newh2)
+
 
       //insert Current Assets detail
       let $h3det = $('<h3>').attr('id','holder')
@@ -140,9 +176,6 @@ console.log(finArray)
       let $newLh3c = $('<h3>').text(totLiab).attr('id','can')                   //data
       $('#dwb').append($newLh3c)
 
-
-
-
       let $newseh2wrap = $('<h2>')
       $newseh2wrap.text('Shareholder Equity').attr('id','sehead')
       $('.fincont').append($newseh2wrap)
@@ -158,27 +191,79 @@ console.log(finArray)
       let $newseh3b = $('<h3>').text(shEqty).attr('id','can')                   //data
       $('#dwse').append($newseh3b)
 
+      $('#fildate').text(api.year[0])
+      $('.caval').text(api.currAsst[0])
+      $('.taval').text(api.totcast[0])
+      $('.clval').text(api.curliab[0])
+      $('.tlval').text(api.totliab[0])
+      $('.seval').text(api.se[0])
 
-// Income Statement highlights
-      sales = (finArray.results[4].incomeStatement.revenue/1000000)
-      cogs = (finArray.results[4].incomeStatement.costOfRevenue/1000000)
-      ebitda = (finArray.results[4].incomeStatement.ebitda/1000000)
-      netInc = (finArray.results[4].incomeStatement.netIncomeFromContinuingOperations/1000000)
 
-      console.log(currAsst, totAsst, currLiab, totLiab, shEqty)
-      console.log(sales, cogs, ebitda,netInc)
+// // Income Statement highlights
+//       sales = (finArray.results[4].incomeStatement.revenue/1000000)
+//       cogs = (finArray.results[4].incomeStatement.costOfRevenue/1000000)
+//       ebitda = (finArray.results[4].incomeStatement.ebitda/1000000)
+//       netInc = (finArray.results[4].incomeStatement.netIncomeFromContinuingOperations/1000000)
 
 // cash flow highlights
 
-      begCash = (finArray.results[4].cashflowStatement.cashAtBeginningOfPeriod/1000000)
-      endCash = (finArray.results[4].cashflowStatement.cashAtEndOfPeriod/1000000)
-      capExp = (finArray.results[4].cashflowStatement.freeCashFlow.capitalExpenditure/1000000)
-      opCashFlo = (finArray.results[4].cashflowStatement.freeCashFlow.operatingCashFlow/1000000)
+      // begCash = (finArray.results[4].cashflowStatement.cashAtBeginningOfPeriod/1000000)
+      // endCash = (finArray.results[4].cashflowStatement.cashAtEndOfPeriod/1000000)
+      // capExp = (finArray.results[4].cashflowStatement.freeCashFlow.capitalExpenditure/1000000)
+      // opCashFlo = (finArray.results[4].cashflowStatement.freeCashFlow.operatingCashFlow/1000000)
 
 
       // console.log(currAsst, totAsst, currLiab, totLiab, shEqty)
       // console.log(sales, cogs, ebitda,netInc)
-      // console.log(begCash,endCash,capExp,opCashFlo)
+      // console.log(begCash,endCash,capExp,opCashFlo)//Balance Sheet highlights
+            // currAsst = (finArray.results[4].balanceSheet.assets.commercialsCurrentAssets.currentAssets/1000000)
+            // totAsst =  (finArray.results[4].balanceSheet.assets.totalAssets/1000000)
+            // currLiab = (finArray.results[4].balanceSheet.liabAndStockEquity.liabilities.currentLiabilities.currentLiabilities/1000000)
+            // totLiab = (finArray.results[4].balanceSheet.liabAndStockEquity.liabilities.totalLiabilities/1000000)
+            // shEqty = (finArray.results[4].balanceSheet.liabAndStockEquity.stockholdersEquity.totalStockholdersEquity/1000000)
+
+}
+
+
+
+
+
+
+
+  $('form').on('submit', (event)=>{        // load the form
+      event.preventDefault()
+
+    $('.fincont').empty();
+
+      const $symbol = $('#symbol')
+      const actsym = $symbol.val()
+      const $exchange = $('#exchange')
+      const actexch = $exchange.val()
+
+    console.log(actsym + ' mid ' + actexch)
+
+/////////beginning of financial statement api ///////////////////////////////////
+
+    var settings = {
+    	"async": true,
+    	"crossDomain": true,
+    	"url": "https://morningstar1.p.rapidapi.com/convenient/fundamentals/yearly/restated?Mic=X"+actexch+"&Ticker="+actsym,
+    	"method": "GET",
+    	"headers": {
+    		"x-rapidapi-host": "morningstar1.p.rapidapi.com",
+    		"x-rapidapi-key": "a62c9da9f4msh1e92df7be31b53ep1bc3c4jsn5e703829f38c",
+    		"accept": "string"
+    	}
+    }
+
+    $.ajax(settings).done(function (response) {
+    	let finArray = (response);
+
+
+/////////////////////////////////////////////// end of  financial api
+      getApiData(finArray)
+
+      buildHtml();
 
     });
   })
