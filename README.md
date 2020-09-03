@@ -43,11 +43,12 @@ A tidy web page that brings back interesting pieces of corporate financial state
 The page as you first arrive is a simple input screen: 
 I have some really cool gif's and no idea how to import them.
 
-![star wars](jvest_beg.gif)
+![investorJ](jvest_beg.gif)
+
+Once an exchange and valid ticker symbol are entered the screen will populate as follows:
 
 
-
-
+![active screenshot](jvestact.gif)
 
 
 
