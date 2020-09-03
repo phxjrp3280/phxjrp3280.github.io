@@ -7,6 +7,11 @@
   display: none;
 }
 
+video {
+      object-fit: cover;
+      position: fixed;
+      width: 100%;
+}
 
 h2 {
   font-size: 20px;

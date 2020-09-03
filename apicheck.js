@@ -208,6 +208,7 @@ const buildHtml = () =>{
 
       $('.fincont').css('display','block');
       $('#cwrap').css('display','flex');
+      $( ".video" ).remove();
 
 // // Income Statement highlights
 //       sales = (finArray.results[4].incomeStatement.revenue/1000000)
