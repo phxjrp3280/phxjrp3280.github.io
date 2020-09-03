@@ -23,7 +23,7 @@ in the ticker of the stock they're looking up.
   a part of the jquery process.  Then when i emptied the content of the html div I was much happier with the result.
 
   
-  Improvements:
+  ## Improvements:
   I got the responsive design part working right by fully understanding the diaplay:none css statement and then understanding the meaning of cascade in cascading style sheets.  I need to rip out the unnecessary code that is in my media reponse but I dare not do it before presentation day.
   
   I got the numbers to appear as $s by using the Intl.NumberFormat - this was actually a little hard to find but it works.
@@ -34,16 +34,16 @@ It is wednesday of project week and I'm going to work with the ajax call to try 
 
 Then I saw a sample readme file that had all this stuff in it......
 
-Jvest
+# InvestorJ
 
 
-https://phxjrp3280.github.io/
-A tidy web page that brings back interesting pieces of corporate financial statements
+# https://phxjrp3280.github.io/
+A tidy web page that brings back interesting pieces of corporate financial statements #
 
 The page as you first arrive is a simple input screen: 
 I have some really cool gif's and no idea how to import them.
 
-![investorJ](jvest_beg.gif)
+![investorJ](jvest1.gif)
 
 Once an exchange and valid ticker symbol are entered the screen will populate as follows:
 
@@ -52,33 +52,33 @@ Once an exchange and valid ticker symbol are entered the screen will populate as
 
 
 
-Installation
-Features
+## Installation
+## Features
  - the code has a modal to instruct the user on what to do and..
  - the code has a carousel to display the same data over time for comparison purposes
  
-Contributing
+## Contributing
 
-Team
+## Team
 -  my classmates were extremly useful in helping me and offering advice.
 
-FAQ
+## FAQ
 - Is that all it does?  Yes, that is all it does.
 
-Support
+## Support
 - the initial intent is to build the site and then abandon it entirely after it has been modified in such a way that it is a suitable personal marketing site.
 
-License
+## License
 
 
-Installation
+## Installation
 
-Clone
+## Clone
 Clone this repo to your local machine using phxjrp3280/phxjrp3280.github.io
 
-Setup
+## Setup
 
-Going into more detail on code and technologies used
+## Technology Detail:
   Javascript is used to create the web page and perform the logic necessary to present the information
   
   JQuery is the command library used by javascript to insert lines into the screen.  
@@ -89,9 +89,11 @@ Going into more detail on code and technologies used
   
   Ajax makes the call to the API.
   
-Contributing
+## Contributing
 I borrowed heavily from classroom examples.  Authors, whose techniques I blatenly mirrored (in alphabetical order) are , Jerrica Bobadilla, Matt Huntington,  Karolin Rafalski and Brendan Quirk
 
+
+## Installing this page (the following installation instructions were duplicated from a sample repo and were included as an attempt at completeness)
 Step 1
 Option 1
 
@@ -100,16 +102,16 @@ Option 2
 
 👯 Clone this repo to your local machine using phxjrp3280/phxjrp3280.github.io
 Step 2
-HACK AWAY! 🔨🔨🔨
+You can change the funtion to your liking.
 Step 3
 🔃 Create a new pull request using https://github.com/joanaz/HireDot2/compare/.
 Team
 Or Contributors/People
 
-Jvest Investors - where passive investing is an art.
+InvestorJ - where passive investing is an art.
 
 Support
 Reach out to me at one of the following places!
 
-Website at biteme.com
-Twitter at @biteme.again
+Website at investorj.com. ### (website does not exist - sample)
+Twitter at @investorJ.  ### (twitter address does not exist - sample)
