@@ -1,19 +1,22 @@
+# InvestorJ
+
+
 The purpose of the page is to load interesting segments from a company's balance sheet, income statement and cash flow statement. 
 The items were selected by the author.  The user inputs the exchange value, either NAS for nasdaq or NYS for the NYSE and then puts
 in the ticker of the stock they're looking up.
 
-Technologies Used:
-  Javascript is used to create the web page and perform the logic necessary to present the information
+# Technologies Used: #
+  ## Javascript is used to create the web page and perform the logic necessary to present the information
   
-  JQuery is the command library used by javascript to insert lines into the screen.  
+  ## JQuery is the command library used by javascript to insert lines into the screen.  
   
-  HTML is used to create the basic structure of the page.
+  ## HTML is used to create the basic structure of the page.
   
-  CSS is used to style the web page.
+  ## CSS is used to style the web page.
   
-  Ajax makes the call to the API.
+  ## Ajax makes the call to the API.
   
-  Challenges:  
+  # Challenges:  
   1.  I initially created a framwork within my primary html display page in an attempt to help "organize" my thoughts
   and offer something hard coded to append to with jquery.  The problem is that I couldn't find a simple way to remove the information
   without logically removing the hard coded framework.  I finally decided to eliminate the interior entirely and code the framework as 
