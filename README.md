@@ -94,23 +94,21 @@ I borrowed heavily from classroom examples.  Authors, whose techniques I blatenl
 
 
 ## Installing this page (the following installation instructions were duplicated from a sample repo and were included as an attempt at completeness)
-Step 1
+### Step 1
 Option 1
 
-🍴 Fork this repo!
+Fork this repo!
 Option 2
 
-👯 Clone this repo to your local machine using phxjrp3280/phxjrp3280.github.io
-Step 2
+Clone this repo to your local machine using phxjrp3280/phxjrp3280.github.io
+###Step 2
 You can change the funtion to your liking.
-Step 3
-🔃 Create a new pull request using https://github.com/joanaz/HireDot2/compare/.
-Team
-Or Contributors/People
+###Step 3
+Create a new pull request using https://github.com/joanaz/HireDot2/compare/.
 
-InvestorJ - where passive investing is an art.
+##InvestorJ - where passive investing is an art.
 
-Support
+##Support
 Reach out to me at one of the following places!
 
 Website at investorj.com. ### (website does not exist - sample)
