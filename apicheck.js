@@ -68,7 +68,7 @@ class ApiData{
     }
   }
 const api = new ApiData('api')
-
+/////////              beginning of function that takes api data and stores it inot an object /////////////
 const getApiData = (input) =>{
   console.log(input)
   for(x=0;x<5;x++){
@@ -107,7 +107,7 @@ const getApiData = (input) =>{
   }
   console.log(api.currAsst[4])
   console.log(api.year[4])
-}
+}        /// end of function that loads data into
 
 const buildHtml = () =>{
 //Balance Sheet highlights
@@ -235,14 +235,8 @@ const buildHtml = () =>{
 
 }
 
-
-
-
-
-
-
-  $('form').on('submit', (event)=>{        // load the form
-      event.preventDefault()
+$('form').on('submit', (event)=>{        // load the form
+    event.preventDefault()
 
     $('.fincont').empty();
 
@@ -269,13 +263,31 @@ const buildHtml = () =>{
 
     $.ajax(settings).done(function (response) {
     	let finArray = (response);
-
-
 /////////////////////////////////////////////// end of  financial api
-      getApiData(finArray)
-
+      getApiData(finArray)      //
       buildHtml();
+    },
 
-    });
-  })
-})
+  )
+  .fail(function (jqXHR, textStatus,errorThrown) {
+      $('#cwrap').css('display','none');
+      $('.fincont').css('display','none');
+      alert('Error - either the Exchange or Symbol is invalid')
+
+    });      //end of ajax call
+  })         // end of on submit function
+})            // end of program
+
+
+// $.ajax(settings).done(function (response) {
+//   let finArray = (response);
+//
+//
+// /////////////////////////////////////////////// end of  financial api
+//   getApiData(finArray)      //
+//
+//   buildHtml();
+//
+// });
+// })
+// })
