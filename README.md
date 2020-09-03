@@ -37,56 +37,54 @@ Jvest
 https://phxjrp3280.github.io/
 A tidy web page that brings back interesting pieces of corporate financial statements
 
-For more on these wonderful badgers badges, refer to badgerbadgerbadger.
-
 The page as you first arrive is a simple input screen: 
+I have some really cool gif's and no idea how to import them.
 
-HAVE WHITE SPACE
-MAKE IT PRETTY
-GIFS ARE REALLY COOL
-GIF Tools
+
+
+
+
 
 
 Installation
 Features
+ - the code has a modal to instruct the user on what to do and..
+ - the code has a carousel to display the same data over time for comparison purposes
+ 
 Contributing
+
 Team
+-  my classmates were extremly useful in helping me and offering advice.
+
 FAQ
+- Is that all it does?  Yes, that is all it does.
+
 Support
+- the initial intent is to build the site and then abandon it entirely after it has been modified in such a way that it is a suitable personal marketing site.
+
 License
-Example (Optional)
-// code away!
 
-let generateProject = project => {
-  let code = [];
-  for (let js = 0; js < project.length; js++) {
-    code.push(js);
-  }
-};
+
 Installation
-All the code required to get started
-Images of what it should look like
+
 Clone
-Clone this repo to your local machine using https://github.com/fvcproductions/SOMEREPO
+Clone this repo to your local machine using phxjrp3280/phxjrp3280.github.io
+
 Setup
-If you want more syntax highlighting, format your code like this:
-update and install this package first
 
-$ brew update
-$ brew install fvcproductions
-now install npm and bower packages
-
-$ npm install
-$ bower install
-For all the possible languages that support syntax highlithing on GitHub (which is basically all of them), refer here.
-Features
-Usage (Optional)
-Documentation (Optional)
-Tests (Optional)
 Going into more detail on code and technologies used
-I utilized this nifty Markdown Cheatsheet for this sample README.
+  Javascript is used to create the web page and perform the logic necessary to present the information
+  
+  JQuery is the command library used by javascript to insert lines into the screen.  
+  
+  HTML is used to create the basic structure of the page.
+  
+  CSS is used to style the web page.
+  
+  Ajax makes the call to the API.
+  
 Contributing
-To get started...
+I borrowed heavily from classroom examples.  Authors, whose techniques I blatenly mirrored (in alphabetical order) are , Jerrica Bobadilla, Matt Huntington,  Karolin Rafalski and Brendan Quirk
 
 Step 1
 Option 1
@@ -94,7 +92,7 @@ Option 1
 🍴 Fork this repo!
 Option 2
 
-👯 Clone this repo to your local machine using https://github.com/joanaz/HireDot2.git
+👯 Clone this repo to your local machine using phxjrp3280/phxjrp3280.github.io
 Step 2
 HACK AWAY! 🔨🔨🔨
 Step 3
@@ -102,28 +100,10 @@ Step 3
 Team
 Or Contributors/People
 
-FVCproductions	FVCproductions	FVCproductions
-FVCproductions	FVCproductions	FVCproductions
-github.com/fvcproductions	github.com/fvcproductions	github.com/fvcproductions
-You can just grab their GitHub profile image URL
-You should probably resize their picture using ?s=200 at the end of the image URL.
-FAQ
-How do I do specifically so and so?
-No problem! Just do this.
+Jvest Investors - where passive investing is an art.
+
 Support
 Reach out to me at one of the following places!
 
-Website at fvcproductions.com
-Twitter at @fvcproductions
-Insert more social links here.
-Donations (Optional)
-You could include a Gratipay link as well.
-Support via Gratipay
-
-License
-License
-
-MIT license
-Copyright 2015 © FVCproductions.
-
-
+Website at biteme.com
+Twitter at @biteme.again
