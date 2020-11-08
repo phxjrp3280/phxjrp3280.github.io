@@ -1,10 +1,21 @@
+body {
+  background-image: url("./nysefloor.jpeg");
+  min-height: 500px;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position:relative;
+  height:1200px;
+}
+
 .fincont {
   margin: auto;
-  background-color:aliceblue;
+  background-color:white;
   border: 2px solid navy;
   border-radius: 11px;
   width: 550px;
   display: none;
+  opacity: .92;
 }
 
 video {
@@ -80,7 +91,12 @@ body {
   margin: 10px 10px 10px 10px;
 }
 form{
-  margin: 20px 10px 10px 30px;
+  margin: 20px 10px 10px 22px;
+  background-color: white;
+  padding: 5px 5px 5px 5px;
+  opacity: .92;
+  width: 520px;
+  border-radius:5px;
 }
 
 #submit {
@@ -114,6 +130,7 @@ align-items: center;}
   width: 550px;
   align-items: center;
   margin: auto;
+  opacity: .92;
 }
 
 #ccont {
@@ -342,8 +359,4 @@ background-color: steelblue;
 #ca100,#ta100,#cl100,#tl100,#se100 {
   margin: 5px;
   width: 45%;
-}
-
-
-
 }
